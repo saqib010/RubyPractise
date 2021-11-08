@@ -14,9 +14,10 @@ class Portfolio < ApplicationRecord
 	#define defaults values for images 
 	#for every new record creation in portfolio the following items are going to set as defaults.
 	after_initialize :set_defaults
+
 	def set_defaults
-		self.main_image ||= 'https://via.placeholder.com/600x400'
-		self.thumb_image ||= 'https://via.placeholder.com/350x250'
+		self.main_image ||= Placeholder.image_generator(height: '600', width: '350') 
+		self.thumb_image ||= Placeholder.image_generator(height: '400', width: '200') 
 	end
 
 	# || means if main image has already value do not override it else if nil set to the default values
