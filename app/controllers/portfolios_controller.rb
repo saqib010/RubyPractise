@@ -1,8 +1,14 @@
 class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
+    # to filter based on the attribute we can use sql query 
+      #@portfolio_items = Portfolio.where(subtitle: 'Angular')
+      #to do this more accurate we use custom scop in model
   end
 
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
   def new
     @portfolio_items = Portfolio.new 
   end

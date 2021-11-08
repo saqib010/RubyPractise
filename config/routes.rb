@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  
   #get 'pages/home'
   #get 'pages/about'
+  get 'angular-items', to: 'portfolios#angular'
   get 'aboutme',to:'pages#about' #first is name second is path # we can change first as we like
   #get 'pages/contact'
   get 'contact',to:'pages#contact' #we can assign any name to page to access in URL
